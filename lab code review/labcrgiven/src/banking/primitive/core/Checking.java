@@ -40,9 +40,6 @@ public class Checking extends Account {
 		if (amount > 0.0f) {		
 			// KG: incorrect, last balance check should be >=
 			if (getState() == State.OPEN || (getState() == State.OVERDRAWN && balance > -100.0f)) {
-				if(balance - amount < -100) {
-					return false;
-				}
 				balance = balance - amount;
 				numWithdraws++;
 				if (numWithdraws > 10)
