@@ -159,7 +159,8 @@ class MainFrame extends JFrame {
 			String name = nameField.getText();
 			String balance = balanceField.getText();
 			Account acc = myServer.getAccount(name);
-			if (acc != null && acc.deposit(Float.parseFloat(balance))) {
+			String type = typeOptions.getSelectedItem().toString();
+			if (type = acc.getType() && acc != null && acc.deposit(Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Deposit successful");
 			} else {
 				JOptionPane.showMessageDialog(null, "Deposit unsuccessful");
@@ -172,7 +173,8 @@ class MainFrame extends JFrame {
 			String name = nameField.getText();
 			String balance = balanceField.getText();
 			Account acc = myServer.getAccount(name);
-			if (acc != null && acc.withdraw(Float.parseFloat(balance))) {
+			String type = typeOptions.getSelectedItem().toString();
+			if (type = acc.getType() && acc != null && acc.withdraw(Float.parseFloat(balance))) {
 				JOptionPane.showMessageDialog(null, "Withdrawal successful");
 			} else {
 				JOptionPane.showMessageDialog(null, "Withdrawal unsuccessful");
